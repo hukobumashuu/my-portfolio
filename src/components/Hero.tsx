@@ -21,24 +21,31 @@ export const Hero = () => {
           </Reveal>
 
           <Reveal delay={100}>
-            {/* UPDATED: Changed text-5xl to text-4xl on mobile to prevent overflow with whitespace-nowrap */}
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-tight">
-              I am a <br />
-              <CyclingText
-                words={[
-                  "Full Stack Engineer",
-                  "Web Developer",
-                  "Software Engineer",
-                ]}
-              />
-            </h1>
+            <div className="space-y-2">
+              {/* Name is now the main focus */}
+              <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight leading-tight">
+                Matthew Jacob<span className="text-blue-500">.</span>
+              </h1>
+
+              {/* Cycling text acts as a dynamic subheading */}
+              <div className="text-2xl sm:text-3xl md:text-4xl font-medium text-zinc-400">
+                I am a{" "}
+                <CyclingText
+                  words={[
+                    "Full Stack Engineer",
+                    "Web Developer",
+                    "Software Engineer",
+                  ]}
+                />
+              </div>
+            </div>
           </Reveal>
 
           <Reveal delay={200}>
             <p className="text-lg text-zinc-400 leading-relaxed max-w-xl">
-              Building accessible, pixel-perfect, and performant web
-              experiences. Currently focusing on distributed systems and
-              server-side architecture.
+              I build software that solves real problems. Combining strong
+              backend logic with modern design to create applications that are
+              smart, scalable, and genuinely useful.
             </p>
           </Reveal>
 
@@ -61,7 +68,7 @@ export const Hero = () => {
           </Reveal>
         </div>
 
-        {/* Abstract Hero Visual - Unchanged */}
+        {/* Abstract Hero Visual - Keeps the layout balanced without a photo */}
         <div className="relative hidden md:flex items-center justify-center">
           <div className="relative w-96 h-96">
             <div className="absolute inset-0 bg-linear-to-tr from-blue-500 to-purple-500 rounded-full opacity-20 blur-[60px] animate-pulse"></div>
