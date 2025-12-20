@@ -16,16 +16,15 @@ export const metadata: Metadata = {
   // 1. The Title seen in the browser tab
   title: "Matthew Jacob | Full Stack Engineer",
 
-  // 2. The description for Google Search results
   description:
-    "Portfolio of Matthew Jacob Insigne. Building accessible, pixel-perfect, and performant web experiences using Next.js, React Native, and Cloud Architecture.",
+    "Portfolio of Matthew Jacob Insigne. Build software that solves real problems. Combining strong backend logic with modern design to create applications that are smart, scalable, and genuinely useful.",
 
-  // 3. Keywords for SEO
   keywords: [
     "Matthew Jacob Insigne",
     "Full Stack Engineer",
     "Web Developer",
     "Next.js",
+    "TypeScript",
     "React Native",
     "Portfolio",
   ],
@@ -33,16 +32,11 @@ export const metadata: Metadata = {
   // 4. Authorship
   authors: [{ name: "Matthew Jacob Insigne" }],
 
-  // 5. Icons (The Logo/Favicon)
-  icons: {
-    icon: "/icon.png",
-  },
-
   // 6. OpenGraph (How it looks when shared on LinkedIn/Discord/Twitter)
   openGraph: {
     title: "Matthew Jacob | Full Stack Engineer",
     description:
-      "Building accessible, pixel-perfect, and performant web experiences.",
+      "Combining strong backend logic with modern design to create applications that are smart, scalable, and genuinely useful.",
     url: "https://matthewjacob.dev", // The domain we discussed
     siteName: "Matthew Jacob Portfolio",
     locale: "en_US",
