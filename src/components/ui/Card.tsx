@@ -1,19 +1,20 @@
-import React from "react";
+import { cn } from "@/lib/utils";
 
-export const Card = ({
+export function Card({
   children,
-  className = "",
+  className,
 }: {
   children: React.ReactNode;
   className?: string;
-}) => (
-  <div
-    className={`
-    bg-zinc-900/50 backdrop-blur-md border border-white/5 
-    hover:border-white/10 hover:bg-zinc-900/80 transition-all duration-300
-    rounded-2xl p-6 ${className}
-  `}
-  >
-    {children}
-  </div>
-);
+}) {
+  return (
+    <div
+      className={cn(
+        "rounded-xl border border-border bg-surface p-5 transition-colors hover:border-ink-secondary/40",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+}
