@@ -8,11 +8,11 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { href: "#home", label: "Home" },
-  { href: "#stack", label: "Stack" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#hackathons", label: "Hackathons" },
+  { href: "/#home", label: "Home" },
+  { href: "/#stack", label: "Stack" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#hackathons", label: "Hackathons" },
 ];
 
 const EMAIL = "matthew.jacob@email.com";
@@ -33,7 +33,7 @@ function ThemeToggle() {
         onClick={() => setTheme("light")}
         className={cn(
           "flex h-8 w-8 items-center justify-center rounded-md text-ink-secondary",
-          theme === "light" && "bg-surface text-ink"
+          theme === "light" && "bg-surface text-ink",
         )}
       >
         <Sun size={16} />
@@ -43,7 +43,7 @@ function ThemeToggle() {
         onClick={() => setTheme("dark")}
         className={cn(
           "flex h-8 w-8 items-center justify-center rounded-md text-ink-secondary",
-          theme === "dark" && "bg-surface text-ink"
+          theme === "dark" && "bg-surface text-ink",
         )}
       >
         <Moon size={16} />
@@ -52,11 +52,17 @@ function ThemeToggle() {
   );
 }
 
-function NavList({ activeId, onNavigate }: { activeId: string; onNavigate?: () => void }) {
+function NavList({
+  activeId,
+  onNavigate,
+}: {
+  activeId: string;
+  onNavigate?: () => void;
+}) {
   return (
     <nav className="flex flex-col gap-0.5">
       {NAV_LINKS.map((link) => {
-        const isActive = activeId === link.href.slice(1);
+        const isActive = activeId === link.href.split("#")[1];
         return (
           <a
             key={link.href}
@@ -64,8 +70,7 @@ function NavList({ activeId, onNavigate }: { activeId: string; onNavigate?: () =
             onClick={onNavigate}
             className={cn(
               "rounded-md px-2.5 py-2 text-sm text-ink-secondary transition-colors",
-              isActive &&
-                "border-l-2 border-accent !rounded-l-none pl-2 font-medium text-ink"
+              isActive && "border-l-2 border-accent pl-2 font-medium text-ink",
             )}
           >
             {link.label}
@@ -80,9 +85,9 @@ function useActiveSection() {
   const [activeId, setActiveId] = useState("home");
 
   useEffect(() => {
-    const sections = NAV_LINKS.map((l) => document.getElementById(l.href.slice(1))).filter(
-      (el): el is HTMLElement => el !== null
-    );
+    const sections = NAV_LINKS.map((l) =>
+      document.getElementById(l.href.split("#")[1]),
+    ).filter((el): el is HTMLElement => el !== null);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -90,7 +95,7 @@ function useActiveSection() {
           if (entry.isIntersecting) setActiveId(entry.target.id);
         });
       },
-      { rootMargin: "-40% 0px -50% 0px" }
+      { rootMargin: "-40% 0px -50% 0px" },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -134,8 +139,13 @@ export function Sidebar() {
             </Button>
           </SheetTrigger>
           <SheetContent>
-            <span className="mb-10 text-[15px] font-medium text-ink">Matthew Jacob</span>
-            <NavList activeId={activeId} onNavigate={() => setMobileOpen(false)} />
+            <span className="mb-10 text-[15px] font-medium text-ink">
+              Matthew Jacob
+            </span>
+            <NavList
+              activeId={activeId}
+              onNavigate={() => setMobileOpen(false)}
+            />
             <div className="mt-4">
               <ThemeToggle />
             </div>
