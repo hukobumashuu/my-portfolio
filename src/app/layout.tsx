@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Sidebar } from "@/components/Sidebar";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -52,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} min-h-screen bg-background text-ink antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -60,7 +61,8 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          {children}
+          <Sidebar />
+          <main className="md:pl-[220px]">{children}</main>
         </ThemeProvider>
       </body>
     </html>
