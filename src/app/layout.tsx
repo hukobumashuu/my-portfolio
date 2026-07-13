@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  // 1. The Title seen in the browser tab
   title: "Matthew Jacob | Full Stack Engineer",
 
   description:
-    "Portfolio of Matthew Jacob Insigne. Build software that solves real problems. Combining strong backend logic with modern design to create applications that are smart, scalable, and genuinely useful.",
+    "Portfolio of Matthew Jacob Insigne. Software engineer building web apps end to end, from database to UI.",
 
   keywords: [
     "Matthew Jacob Insigne",
@@ -29,15 +31,13 @@ export const metadata: Metadata = {
     "Portfolio",
   ],
 
-  // 4. Authorship
   authors: [{ name: "Matthew Jacob Insigne" }],
 
-  // 6. OpenGraph (How it looks when shared on LinkedIn/Discord/Twitter)
   openGraph: {
     title: "Matthew Jacob | Full Stack Engineer",
     description:
-      "Combining strong backend logic with modern design to create applications that are smart, scalable, and genuinely useful.",
-    url: "https://matthewjacob.dev", // The domain we discussed
+      "Software engineer building web apps end to end, from database to UI.",
+    url: "https://matthewjacob.dev",
     siteName: "Matthew Jacob Portfolio",
     locale: "en_US",
     type: "website",
@@ -50,12 +50,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      {/* Added 'scroll-smooth' for nice anchor scrolling */}
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
+        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
