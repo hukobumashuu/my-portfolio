@@ -15,7 +15,7 @@ const NAV_LINKS = [
   { href: "/#hackathons", label: "Hackathons" },
 ];
 
-const EMAIL = "matthew.jacob@email.com";
+const EMAIL = "matthewj.insigne.gmail.com";
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme();
