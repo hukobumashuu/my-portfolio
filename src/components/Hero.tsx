@@ -18,11 +18,12 @@ export function Hero() {
     >
       <div className="flex flex-col justify-center">
         <h1 className="mb-4 text-3xl font-medium leading-tight text-ink sm:text-4xl">
-          Matthew Jacob Insigne
+          Matthew Jacob B. Insigne
         </h1>
         <p className="mb-3 text-[15px] leading-relaxed text-ink-secondary">
-          I build web apps end to end, from database to UI. Recently wrapped a
-          software engineering internship, and now looking for full-time roles.
+          I build web apps and mobile end to end, from database to UI. Recently
+          wrapped a software developer internship, and now looking for full-time
+          roles.
         </p>
         <p className="mb-6 text-[15px] leading-relaxed text-ink-secondary">
           Comfortable across the stack, but I gravitate toward backend and
@@ -46,8 +47,7 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Add your photo at /public/profile.jpg */}
-      <div className="relative order-first h-[220px] overflow-hidden rounded-xl border border-border bg-surface sm:order-none sm:h-auto">
+      <div className="relative order-first h-[220px] overflow-hidden rounded-xl border border-border bg-surface sm:order-0 sm:h-auto">
         <Image
           src="/profile.jpg"
           alt="Matthew Jacob Insigne"
