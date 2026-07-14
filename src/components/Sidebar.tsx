@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Sun, Moon, Menu, Mail } from "lucide-react";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
@@ -15,7 +16,7 @@ const NAV_LINKS = [
   { href: "/#hackathons", label: "Hackathons" },
 ];
 
-const EMAIL = "matthewj.insigne.gmail.com";
+const EMAIL = "matthewj.insigne@gmail.com";
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -83,11 +84,16 @@ function NavList({
 
 function useActiveSection() {
   const [activeId, setActiveId] = useState("home");
+  const pathname = usePathname();
 
   useEffect(() => {
+    if (pathname !== "/") return;
+
     const sections = NAV_LINKS.map((l) =>
       document.getElementById(l.href.split("#")[1]),
     ).filter((el): el is HTMLElement => el !== null);
+
+    if (sections.length === 0) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -100,7 +106,7 @@ function useActiveSection() {
 
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return activeId;
 }
@@ -116,10 +122,9 @@ export function Sidebar() {
         <span className="text-[15px] font-medium text-ink">Matthew Jacob</span>
         <div className="h-14" />
         <NavList activeId={activeId} />
-        <div className="mt-3.5">
-          <ThemeToggle />
-        </div>
         <div className="flex-1" />
+        <ThemeToggle />
+        <div className="my-4 h-px bg-border" />
         <a
           href={`mailto:${EMAIL}`}
           className="flex items-center gap-1.5 font-mono text-xs text-ink-secondary hover:text-accent"
@@ -146,10 +151,9 @@ export function Sidebar() {
               activeId={activeId}
               onNavigate={() => setMobileOpen(false)}
             />
-            <div className="mt-4">
-              <ThemeToggle />
-            </div>
             <div className="flex-1" />
+            <ThemeToggle />
+            <div className="my-4 h-px bg-border" />
             <a
               href={`mailto:${EMAIL}`}
               className="flex items-center gap-1.5 font-mono text-xs text-ink-secondary hover:text-accent"
