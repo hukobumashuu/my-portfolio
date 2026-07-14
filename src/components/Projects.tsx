@@ -22,6 +22,7 @@ export function Projects() {
                   src={project.thumbnail}
                   alt={`${project.title} screenshot`}
                   fill
+                  sizes="(max-width: 640px) 100vw, 320px"
                   className="object-contain"
                 />
               </div>

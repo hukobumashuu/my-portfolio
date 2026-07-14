@@ -52,6 +52,8 @@ export function Hero() {
           src="/profile.jpg"
           alt="Matthew Jacob Insigne"
           fill
+          priority
+          sizes="(max-width: 640px) 100vw, 150px"
           className="object-cover"
         />
       </div>

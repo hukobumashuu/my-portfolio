@@ -59,6 +59,7 @@ export default async function ProjectPage({
                 src={shot.src}
                 alt={`${project.title} — ${shot.label}`}
                 fill
+                sizes="(max-width: 640px) 100vw, 624px"
                 className="object-contain"
               />
             </div>
