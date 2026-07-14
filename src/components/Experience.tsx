@@ -6,18 +6,29 @@ export function Experience() {
       <h2 className="mb-6 text-xl font-medium text-ink">Experience</h2>
 
       <p className="mb-1 text-[15px] font-medium text-ink">
-        Software Engineering Intern, Company Name
+        Software Developer Intern, Wizy.io
       </p>
       <p className="mb-3 font-mono text-xs text-ink-secondary">
-        Jan — May 2026
+        February — May 2026
       </p>
       <p className="mb-4 text-[15px] leading-relaxed text-ink-secondary">
-        Built and shipped [specific feature] used by [X users], worked
-        across the stack on [area of the product], and picked up
-        [skill/tool] on the job that I applied to [specific outcome].
+        Built the Node.js/Express backend foundation for Wizy Report, a
+        multi-tenant QA reporting platform — tenant, user, and test-run modules
+        with Sequelize/PostgreSQL and system-wide Zod validation, including
+        schema-based tenant isolation. Also built out the React/TypeScript
+        frontend foundation with Ant Design and TanStack Query, and co-presented
+        Version 1 of the reporting feature to the product team alongside my
+        senior engineer.
       </p>
       <div className="flex flex-wrap gap-1.5">
-        {["React", "Node.js", "PostgreSQL"].map((tech) => (
+        {[
+          "Node.js",
+          "Express.js",
+          "Sequelize",
+          "PostgreSQL",
+          "React",
+          "TypeScript",
+        ].map((tech) => (
           <Badge key={tech}>{tech}</Badge>
         ))}
       </div>
