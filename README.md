@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Matthew Jacob Insigne
 
-## Getting Started
+Personal portfolio site, built with the Next.js App Router.
 
-First, run the development server:
+**Live:** [matthewisntdev.vercel.app](https://matthewisntdev.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Stack
+
+- **Framework:** Next.js 16 (App Router), React 19, TypeScript
+- **Styling:** Tailwind CSS v4
+- **UI primitives:** Radix UI (Avatar, Dialog, Separator, Switch), custom-built on top rather than a full component library
+- **Theming:** `next-themes` (light/dark)
+- **Icons:** Lucide
+- **Fonts:** Space Grotesk (display), JetBrains Mono (code/labels)
+
+## Project structure
+
+```
+src/
+  app/
+    page.tsx              # Homepage — assembles all sections
+    projects/[slug]/       # Individual project detail pages
+    layout.tsx             # Root layout — theme provider, persistent sidebar
+  components/
+    Hero.tsx, TechStack.tsx, Projects.tsx,
+    Experience.tsx, Hackathons.tsx, Sidebar.tsx
+    ui/                     # Local UI primitives (Badge, Card, Button, Sheet, etc.)
+  lib/
+    projects.ts             # Project content — descriptions, stack, links
+    utils.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Project content (descriptions, tech tags, links) lives in `src/lib/projects.ts` rather than being hardcoded in components — add a new project there and it's automatically picked up by both the homepage grid and its detail page.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Getting started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000).
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run dev` — local development server
+- `npm run build` — production build
+- `npm run start` — run the production build locally
+- `npm run lint` — ESLint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployed on [Vercel](https://vercel.com). Pushes to `main` deploy automatically.
