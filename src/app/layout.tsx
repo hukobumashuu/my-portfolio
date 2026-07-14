@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Matthew Jacob | Full Stack Engineer",
     description:
       "Software engineer building web apps end to end, from database to UI.",
-    url: "https://matthewjacob.dev",
+    url: "https://matthewisntdev.vercel.app/",
     siteName: "Matthew Jacob Portfolio",
     locale: "en_US",
     type: "website",
