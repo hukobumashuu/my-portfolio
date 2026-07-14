@@ -42,9 +42,9 @@ export const PROJECTS: Project[] = [
     slug: "waispath",
     title: "WaisPath",
     summary:
-      "Accessibility navigation platform for persons with disabilities, piloted with Pasig City obstacle data, with a companion admin dashboard.",
+      "Accessibility navigation platform for Persons with Reduced Mobility, piloted with Pasig City obstacle data, with a companion admin dashboard.",
     description: [
-      "WaisPath is an accessibility-focused navigation platform for persons with disabilities. I led development as part of a 2-person capstone team — the idea, system design, and engineering were mine; my partner led the paper, QA, and our partnership with Pasig City's Persons with Disability Affairs Office (PDAO).",
+      "WaisPath is an accessibility-focused navigation platform for Persons with Reduced Mobility (PRM). I led development as part of a 2-person capstone team — the idea, system design, and engineering were mine; my partner led the paper, QA, and our partnership with Pasig City's Persons with Disability Affairs Office (PDAO).",
       "The mobile app uses the Haversine algorithm with a dual-threshold filter (100m radius, 15m route buffer) to trigger proximity-based text-to-speech obstacle alerts, validated at ~97% detection accuracy through live field testing I ran myself, walking obstacle routes across Pasig City.",
       "A deterministic four-factor engine — severity, community validation, infrastructure impact, and admin verification — scores and prioritizes reported obstacles, standardizing how the companion web dashboard surfaces the most urgent reports to LGU administrators. The admin portal itself runs on claims-based role permissions (super admin, LGU admin, field admin), with unified audit logging across both the mobile and web sides.",
     ],
