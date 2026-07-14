@@ -2,18 +2,11 @@ import { Badge } from "@/components/ui/Badge";
 
 const HACKATHONS = [
   {
-    title: "Hackathon Name, on-site",
-    meta: "Month 2026",
+    title: "Kadakareer x Home Credit PH Hackathon, online",
+    meta: "December 2025 · Top 10 finalist, 100+ teams",
     description:
-      "Built and deployed [project] within the event using AI-assisted tooling, working with a small team under time pressure.",
-    stack: ["Next.js", "OpenAI API"],
-  },
-  {
-    title: "Hackathon Name, online",
-    meta: "Month 2026 · Top 10 finalist",
-    description:
-      "Pitched an idea for [project] through an online submission round and placed in the top 10 out of [X] teams.",
-    stack: ["Figma", "Product design"],
+      "Led product strategy and conceptualization for Diskarte AI, an ROI-first fintech marketplace feature that recommends complementary loan products with AI-generated business cases, target market analysis, and pricing strategy. Collaborated with a 3-person team to develop the concept into a Top 10 finalist pitch.",
+    stack: ["Product Strategy", "Fintech", "AI-Assisted Ideation"],
   },
 ];
 
